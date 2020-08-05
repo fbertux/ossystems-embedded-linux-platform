@@ -1,32 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-  <remote fetch="http://code.ossystems.com.br" name="ossystems" review="code.ossystems.com.br"/>
-  <remote fetch="git://git.yoctoproject.org" name="yocto"/>
-  <remote fetch="git://github.com/Freescale" name="fslc"/>
-  <remote fetch="git://git.openembedded.org" name="oe"/>
+  <include name="core.xml"/>
+  <include name="fslc.xml"/>
+  <include name="fslc-3rdparty.xml"/>
+  <include name="fslc-distro.xml"/>
 
-  <default revision="invalidRevision" sync-j="4"/>
-
-  <!-- Open Embedded Layers -->
-  <project remote="oe" revision="master" name="bitbake" path="sources/bitbake"/>
-  <project remote="oe" revision="master" name="openembedded-core" path="sources/openembedded-core"/>
-  <project remote="oe" revision="master" name="meta-openembedded" path="sources/meta-openembedded"/>
-
-  <!-- O.S. Systems Yocto BSP -->
-  <project remote="ossystems" revision="master" name="meta-ossystems-base" path="sources/meta-ossystems-base"/>
-  <project remote="ossystems"  revision="master" name="ossystems-yocto-base-scripts" path="sources/base">
-    <copyfile dest="setup-environment" src="setup-environment"/>
-  </project>
-
-  <!-- Freescale BSP components -->
-  <project remote="ossystems" revision="master" name="meta-freescale" path="sources/meta-freescale"/>
-  <project remote="ossystems" revision="master" name="meta-freescale-3rdparty" path="sources/meta-freescale-3rdparty"/>
-  <project remote="ossystems" revision="master" name="meta-freescale-distro" path="sources/meta-freescale-distro"/>
-
-  <!-- conf -->
-  <project remote="ossystems" revision="master" name="ossystems-yocto-platform" path="sources/platform"/>
-
-  <!-- ye -->
-  <project name="apps/ye" path="sources/ye" remote="ossystems" revision="master"/>
 </manifest>

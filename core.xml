@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote fetch="git://github.com" name="github"/>
+  <remote fetch="git://git.yoctoproject.org" name="yocto"/>
+  <remote fetch="git://git.openembedded.org" name="oe"/>
+
+  <default revision="master" sync-j="4"/>
+
+  <!-- Open Embedded Layers -->
+  <project remote="oe" name="bitbake" path="sources/bitbake"/>
+  <project remote="oe" name="openembedded-core" path="sources/openembedded-core"/>
+
+  <!-- O.S. Systems Yocto BSP -->
+  <project remote="github" revision="wip-rework-platform" name="fbertux/ossystems-embedded-linux-platform" path="sources/platform"/>
+  <project remote="github" name="OSSystemsEmbeddedLinux/meta-ossystems-base" path="sources/meta-ossystems-base"/>
+  <project remote="github" name="OSSystemsEmbeddedLinux/ossystems-yocto-base-scripts" path="sources/base">
+    <copyfile dest="setup-environment" src="setup-environment"/>
+  </project>
+
+  <!-- Yocto Explorer -->
+  <project remote="github" name="OSSystemsEmbeddedLinux/ye" path="sources/ye"/>
+</manifest>

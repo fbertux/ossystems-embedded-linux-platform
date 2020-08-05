@@ -1,4 +1,4 @@
-def __after_init_ossystems_yocto():
+def __after_init_fslc():
     PLATFORM_ROOT_DIR = os.environ['PLATFORM_ROOT_DIR']
 
     append_layers([ os.path.join(PLATFORM_ROOT_DIR, 'sources', p) for p in
@@ -13,4 +13,4 @@ def __after_init_ossystems_yocto():
     # FSL EULA
     eulas.accept['meta-freescale/EULA'] = 'ACCEPT_FSL_EULA = "1"'
 
-run_after_init(__after_init_ossystems_yocto)
+run_after_init(__after_init_fslc)

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project remote="github" name="Freescale/meta-freescale" path="sources/meta-freescale"/>
+</manifest>
