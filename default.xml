@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <remote fetch="git://github.com" name="github"/>
+  <remote fetch="ssh://git@github.com" name="github-ssh"/>
   <remote fetch="git://git.yoctoproject.org" name="yocto"/>
   <remote fetch="git://git.openembedded.org" name="oe"/>
 
@@ -11,7 +12,8 @@
   <project remote="oe" revision="master" name="bitbake" path="sources/bitbake"/>
   <project remote="oe" name="openembedded-core" path="sources/openembedded-core"/>
 
-  <project remote="github" name="OSSystemsEmbeddedLinux/meta-ossystems-base" path="sources/meta-ossystems-base"/>
+
+  <project remote="github-ssh" name="OSSystemsEmbeddedLinux/meta-ossystems-base" path="sources/meta-ossystems-base"/>
   <project remote="github" name="OSSystemsEmbeddedLinux/ossystems-yocto-base-scripts" path="sources/base">
     <copyfile dest="setup-environment" src="setup-environment"/>
   </project>
@@ -19,5 +21,28 @@
   <project remote="github" revision="master" name="OSSystemsEmbeddedLinux/ye" path="sources/ye"/>
 
   <!-- ### Project specific configuration ### -->
-  <project remote="github" name="OSSystemsEmbeddedLinux/ossystems-embedded-linux-platform" path="sources/platform"/>
+  <project remote="github-ssh" revision="master-ref" name="fbertux/ossystems-embedded-linux-platform" path="sources/platform"/>
+
+  <!-- OE layers -->
+  <project remote="oe" name="meta-openembedded" path="sources/meta-openembedded"/>
+
+  <!-- Rpi layers -->
+  <project remote="yocto" name="meta-raspberrypi" path="sources/meta-raspberrypi"/>
+
+  <!-- Qt5 layers -->
+  <project remote="github" name="meta-qt5/meta-qt5" path="sources/meta-qt5"/>
+
+  <!-- Browser layers -->
+  <project remote="github" name="Igalia/meta-webkit" path="sources/meta-webkit"/>
+
+  <!-- ShellHub layers -->
+  <project remote="github-ssh" name="shellhub-io/meta-shellhub" path="sources/meta-shellhub"/>
+
+  <!-- NXP layers -->
+  <project remote="github-ssh" name="Freescale/meta-freescale" path="sources/meta-freescale"/>
+  <project remote="github-ssh" name="Freescale/meta-freescale-3rdparty" path="sources/meta-freescale-3rdparty"/>
+
+  <!-- TI layers -->
+  <project remote="yocto" name="meta-ti" path="sources/meta-ti"/>
+  <project remote="yocto" name="meta-arm" path="sources/meta-arm"/>
 </manifest>
