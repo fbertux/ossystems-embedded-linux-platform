@@ -3,12 +3,20 @@ def __after_init_ossystems_yocto():
 
     append_layers([ os.path.join(PLATFORM_ROOT_DIR, 'sources', p) for p in
                     [
+                        'meta-arm/meta-arm',
+                        'meta-arm/meta-arm-toolchain',
                         'meta-freescale',
                         'meta-freescale-3rdparty',
-                        'meta-freescale-distro',
+                        'meta-openembedded/meta-networking',
                         'meta-openembedded/meta-oe',
-                    ]
-    ])
+                        'meta-openembedded/meta-python',
+                        'meta-ossystems-demos',
+                        'meta-qt5',
+                        'meta-raspberrypi',
+                        'meta-shellhub',
+                        'meta-ti',
+                        'meta-webkit',
+                    ]])
 
     # FSL EULA
     eulas.accept['meta-freescale/EULA'] = 'ACCEPT_FSL_EULA = "1"'
