@@ -1,32 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-
-  <remote fetch="http://code.ossystems.com.br" name="ossystems" review="code.ossystems.com.br"/>
+  <remote fetch="git://github.com" name="github"/>
+  <remote fetch="ssh://git@github.com" name="github-ssh"/>
   <remote fetch="git://git.yoctoproject.org" name="yocto"/>
-  <remote fetch="git://github.com/Freescale" name="fslc"/>
   <remote fetch="git://git.openembedded.org" name="oe"/>
 
-  <default revision="invalidRevision" sync-j="4"/>
+  <!-- ### Yocto Project release used as default for all included layers and components ### -->
+  <default revision="dunfell"/>
 
-  <!-- Open Embedded Layers -->
+  <!-- ### O.S. Systems Embedded Linux Core layers ### -->
   <project remote="oe" revision="1.46" name="bitbake" path="sources/bitbake"/>
-  <project remote="oe" revision="dunfell" name="openembedded-core" path="sources/openembedded-core"/>
-  <project remote="oe" revision="dunfell" name="meta-openembedded" path="sources/meta-openembedded"/>
+  <project remote="oe" name="openembedded-core" path="sources/openembedded-core"/>
 
-  <!-- O.S. Systems Yocto BSP -->
-  <project remote="ossystems" revision="dunfell" name="meta-ossystems-base" path="sources/meta-ossystems-base"/>
-  <project remote="ossystems"  revision="dunfell" name="ossystems-yocto-base-scripts" path="sources/base">
+  <project remote="github-ssh" name="OSSystemsEmbeddedLinux/meta-ossystems-base" path="sources/meta-ossystems-base"/>
+  <project remote="github-ssh" name="OSSystemsEmbeddedLinux/ossystems-yocto-base-scripts" path="sources/base">
     <copyfile dest="setup-environment" src="setup-environment"/>
   </project>
 
-  <!-- Freescale BSP components -->
-  <project remote="ossystems" revision="dunfell" name="meta-freescale" path="sources/meta-freescale"/>
-  <project remote="ossystems" revision="dunfell" name="meta-freescale-3rdparty" path="sources/meta-freescale-3rdparty"/>
-  <project remote="ossystems" revision="dunfell" name="meta-freescale-distro" path="sources/meta-freescale-distro"/>
+  <project remote="github-ssh" revision="master" name="OSSystemsEmbeddedLinux/ye" path="sources/ye"/>
 
-  <!-- conf -->
-  <project remote="ossystems" revision="dunfell" name="ossystems-yocto-platform" path="sources/platform"/>
+  <!-- ### Project specific configuration ### -->
+  <project remote="github-ssh" revision="dunfell-ref" name="fbertux/ossystems-embedded-linux-platform" path="sources/platform"/>
 
-  <!-- ye -->
-  <project name="apps/ye" path="sources/ye" remote="ossystems" revision="master"/>
+  <!-- OE layers -->
+  <project remote="oe" name="meta-openembedded" path="sources/meta-openembedded"/>
+
+  <!-- Rpi layers -->
+  <project remote="yocto" name="meta-raspberrypi" path="sources/meta-raspberrypi"/>
+
+  <!-- Qt5 layers -->
+  <project remote="github" name="meta-qt5/meta-qt5" path="sources/meta-qt5"/>
+
+  <!-- Browser layers -->
+  <project remote="github" revision="master" name="Igalia/meta-webkit" path="sources/meta-webkit"/>
+
+  <!-- ShellHub layers -->
+  <project remote="github-ssh" revision="master" name="shellhub-io/meta-shellhub" path="sources/meta-shellhub"/>
+
+  <!-- NXP layers -->
+  <project remote="github-ssh" name="Freescale/meta-freescale" path="sources/meta-freescale"/>
+  <project remote="github-ssh" name="Freescale/meta-freescale-3rdparty" path="sources/meta-freescale-3rdparty"/>
+
+  <!-- TI layers -->
+  <project remote="yocto" name="meta-ti" path="sources/meta-ti"/>
+  <project remote="yocto" name="meta-arm" path="sources/meta-arm"/>
 </manifest>
