@@ -45,4 +45,7 @@
   <!-- TI layers -->
   <project remote="yocto" name="meta-ti" path="sources/meta-ti"/>
   <project remote="yocto" name="meta-arm" path="sources/meta-arm"/>
+
+  <!-- O.S. Systems Demos layer -->
+  <project remote="github-ssh" revision="master" name="OSSystemsEmbeddedLinux/meta-ossystems-demos" path="sources/meta-ossystems-demos"/>
 </manifest>

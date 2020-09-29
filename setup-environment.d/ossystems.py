@@ -11,6 +11,7 @@ def __after_init_ossystems_yocto():
                         'meta-openembedded/meta-networking',
                         'meta-openembedded/meta-oe',
                         'meta-openembedded/meta-python',
+                        'meta-ossystems-demos',
                         'meta-qt5',
                         'meta-raspberrypi',
                         'meta-shellhub',
